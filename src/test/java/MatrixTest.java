@@ -29,4 +29,18 @@ class MatrixTest {
         double[][] expectAns = {{7, 9, 11}, {13, 15, 17}, {19, 21, 23}};
         assertArrayEquals(ans, expectAns);
     }
+
+    @Test
+    public void throwExceptionIfTryToAddMatricesWithNotEqualSize() throws Exception {
+        double[][] array1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        double[][] array2 = {{6, 7}, {9, 10}, {12, 13}};
+        assertThrows(Exception.class, ()->{Matrix.add(array1, array2);});
+    }
+
+    @Test
+    public void throwExceptionIfTryToSubtractMatricesWithNotEqualSize() throws Exception {
+        double[][] array1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        double[][] array2 = {{6, 7}, {9, 10}, {12, 13}};
+        assertThrows(Exception.class, ()->{Matrix.subtract(array1, array2);});
+    }
 }
