@@ -11,14 +11,17 @@ class MatrixTest {
         double[][] expectAns = {{6, 7, 8}, {9, 10, 11}, {12, 13, 14}};
         assertArrayEquals(ans, expectAns);
     }
+
+    @Test
     public void canSubtractNumberToMatrix() {
         double[][] array = {{6, 7, 8}, {9, 10, 11}, {12, 13, 14}};
         int number = 5;
-        double[][] ans = Matrix.add(array, number);
+        double[][] ans = Matrix.subtract(array, number);
         double[][] expectAns = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         assertArrayEquals(ans, expectAns);
     }
 
+    @Test
     public void canAddMatricesWithEqualSize() throws Exception {
         double[][] array1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         double[][] array2 = {{6, 7, 8}, {9, 10, 11}, {12, 13, 14}};
