@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Matrix {
 
     public static double[][] multiply(double[][] firstMatrix, double[][] secondMatrix) {
@@ -63,6 +68,25 @@ public class Matrix {
         return cell;
     }
 
+    public static double[][] readFromFile(String path){
+        int row, col;
+        double[][] array;
+        try (Scanner s = new Scanner(new File(path))) {
+            s.useLocale(Locale.US);
+            row = s.nextInt();
+            col = s.nextInt();
+            array = new double[row][col];
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    array[i][j]  = s.nextDouble();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            return null;
+        }
+        return array;
+
+    }
     public static void print(double[][] matrix) {
         int rows=matrix.length;
         int cols=matrix[0].length;
