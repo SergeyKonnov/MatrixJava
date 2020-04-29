@@ -3,15 +3,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.ParameterizedTest.*;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.params.provider.ValueSource.*;
 
 class MatrixTest {
     @Test
     public void canAddNumberToMatrix() {
         double[][] array = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int number = 5;
+
         double[][] ans = Matrix.add(array, number);
         double[][] expectAns = {{6, 7, 8}, {9, 10, 11}, {12, 13, 14}};
         assertArrayEquals(ans, expectAns);
@@ -81,8 +80,7 @@ class MatrixTest {
 
     @Test
     public void cantReadFileWithIncorrectPath() {
-        double[][] array = Matrix.readFromFile("something incorrect");
-        assertNull(array);
+        assertNull(Matrix.readFromFile("something incorrect"));
     }
 
     @ParameterizedTest
