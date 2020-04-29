@@ -83,6 +83,12 @@ public class Matrix {
             }
         } catch (FileNotFoundException e) {
             return null;
+        } catch (java.util.InputMismatchException e) {
+            return null;
+        } catch (java.util.NoSuchElementException e) {
+            return null;
+        } catch (IllegalStateException e) {
+            return null;
         }
         return array;
 
