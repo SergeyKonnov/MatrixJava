@@ -84,7 +84,7 @@ class MatrixTest {
     }
 
     @ParameterizedTest
-    @ValueSource (strings = {"/IncorrectTest1.txt", "/IncorrectTest2.txt", "/IncorrectTest3.txt"})
+    @ValueSource (strings = {"/incorrectTest1.txt", "/incorrectTest2.txt", "/incorrectTest3.txt"})
     void cantReadIncorrectFiles(String path) {
         double[][] array = Matrix.readFromFile(getClass().getResource(path).getFile());
         assertNull(array);
