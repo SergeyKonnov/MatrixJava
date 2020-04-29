@@ -2,8 +2,7 @@ matrix:
   include:
   - os: linux
     language: java
-    jdk:
-       - oraclejdk8
+       - option 8
     dist: bionic
     script:
     - mvn test
